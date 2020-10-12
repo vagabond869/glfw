@@ -70,7 +70,11 @@ endif()
 # Set compiler specific flags
 #--------------------------------------------------------------------
 if (MSVC)
-    if (NOT USE_MSVC_RUNTIME_LIBRARY_DLL)
+    if (NOT ${CMAKE_VERSION} VERSION_LESS 3.15)
+        if (NOT USE_MSVC_RUNTIME_LIBRARY_DLL)
+            message(WARNING "CMake 3.15 and later ignores USE_MSVC_RUNTIME_LIBRARY_DLL, instead see CMAKE_MSVC_RUNTIME_LIBRARY")
+        endif()
+    elseif (NOT USE_MSVC_RUNTIME_LIBRARY_DLL)
         foreach (flag CMAKE_C_FLAGS
                       CMAKE_C_FLAGS_DEBUG
                       CMAKE_C_FLAGS_RELEASE

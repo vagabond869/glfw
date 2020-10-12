@@ -70,6 +70,14 @@ To work around this, call any joystick function before waiting for events, for
 example by setting a [joystick callback](@ref joystick_event).
 
 
+@subsubsection cmake_msvcrt_34 Selection of MSVC runtime library on CMake 3.15 and later
+
+CMake 3.15 and later will ignore the @ref USE_MSVC_RUNTIME_LIBRARY_DLL option in
+favor of the built-in
+[CMAKE_MSVC_RUNTIME_LIBRARY](https://cmake.org/cmake/help/latest/variable/CMAKE_MSVC_RUNTIME_LIBRARY.html)
+variable.
+
+
 @subsubsection standalone_34 Tests and examples are disabled when built as a sub-project
 
 GLFW now does not build the tests and examples when it is added as
