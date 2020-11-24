@@ -29,13 +29,15 @@ project "GLFW"
              "src/win32_time.c",
              "src/win32_thread.c",
              "src/win32_window.c",
+             "src/wgl_context.c",
+             "src/egl_context.c",
              "src/win32_context.c",
              "src/osmesa_context.c",
          }
 
          defines {
-             "__GLFW_WIN32",
-             "__CRT_SECURE_NO_WARNINGS"
+             "_GLFW_WIN32",
+             "_CRT_SECURE_NO_WARNINGS"
          }
 
     filter { "system:windows", "configurations:Release" } 
